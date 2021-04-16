@@ -2,10 +2,10 @@
 #include <iostream>
 
 // how to run
-// $ ./build/cli11-positional-option -t target -d device -p port
+// $ ./build/cli11-dash-option -t target -d device -p port
 
 int main(int argc, char** argv) {
-    CLI::App app{ "App description" };
+    CLI::App app{ "CLI11 example: use dash options" };
 
     std::string target;
     app.add_option("-t", target, "target url")->required();
@@ -13,7 +13,8 @@ int main(int argc, char** argv) {
     app.add_option("-d", device, "device name")->required();
 
     int port = 1111;  // it has a default value
-    app.add_option("-p", port, "device port");
+    // adding "true" here so "argv[0] --help" will show its default value
+    app.add_option("-p", port, "device port", true);
 
     CLI11_PARSE(app, argc, argv);
 

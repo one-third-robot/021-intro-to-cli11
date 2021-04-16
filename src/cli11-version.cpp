@@ -33,12 +33,8 @@ static void show_author(void) {
 #endif
 }
 
-// assumeing we want to run the program like this:
-// ./build/cli11-demo target device port
-
 int main(int argc, char* argv[]) {
-    CLI::App    app{ "CLI11 example program: to show how to use options" };
-    std::string filename = "cli11-demo";
+    CLI::App app{ "CLI11 example: to check the software version" };
 
     // --------------------------------------------------------------------
     // add some group options

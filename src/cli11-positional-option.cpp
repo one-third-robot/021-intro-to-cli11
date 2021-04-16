@@ -5,8 +5,7 @@
 // $ ./build/cli11-positional-option target device port
 
 int main(int argc, char* argv[]) {
-    CLI::App    app{ "CLI11 example program: to show how to use options" };
-    std::string filename = "cli11-demo";
+    CLI::App app{ "CLI11 example: use positional options" };
 
     // positional arguments, do not mess the positions
     std::string target;
